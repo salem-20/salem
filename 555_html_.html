@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم Little Lemon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* التصميم العام */
+        .header {
+            background: #f4ce14;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1500');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f4ce14;
+            color: #333;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .reservation-form {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Little Lemon</div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#menu">قائمة الطعام</a></li>
+                <li><a href="#about">عن المطعم</a></li>
+                <li><a href="#reservation">الحجوزات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- قسم الرئيسية -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>مرحباً بكم في Little Lemon</h1>
+            <p>تجربة طعام استثنائية في قلب المدينة</p>
+            <a href="#reservation" class="btn">احجز طاولتك</a>
+        </div>
+    </section>
+
+    <!-- قسم قائمة الطعام -->
+    <section id="menu" class="section">
+        <h2>قائمة الطعام</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>سلطة البحر المتوسط</h3>
+                <p>مزيج طازج من الخضار والأعشاب</p>
+                <span>45 ريال</span>
+            </div>
+            <div class="menu-item">
+                <h3>باستا الليمون</h3>
+                <p>معكرونة مع صلصة ليمون خفيفة</p>
+                <span>65 ريال</span>
+            </div>
+            <div class="menu-item">
+                <h3>سمك مشوي</h3>
+                <p>سمك طازج مشوي مع أعشاب</p>
+                <span>85 ريال</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الحجوزات -->
+    <section id="reservation" class="section">
+        <h2>حجز طاولة</h2>
+        <form class="reservation-form" id="reservationForm">
+            <div class="form-group">
+                <label for="name">الاسم الكامل</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">التاريخ</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">الوقت</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">عدد الأشخاص</label>
+                <select id="guests" name="guests" required>
+                    <option value="1">1 شخص</option>
+                    <option value="2">2 أشخاص</option>
+                    <option value="3">3 أشخاص</option>
+                    <option value="4">4 أشخاص</option>
+                    <option value="5">5+ أشخاص</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">تأكيد الحجز</button>
+        </form>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer" id="contact">
+        <p>العنوان: شارع المطاعم، الرياض</p>
+        <p>الهاتف: 0112345678</p>
+        <p>البريد الإلكتروني: info@littlelemon.com</p>
+        <p>أوقات العمل: ٤:٠٠ مساءً - ١٢:٠٠ منتصف الليل</p>
+    </footer>
+
+    <script>
+        // معالجة نموذج الحجز
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                guests: document.getElementById('guests').value
+            };
+
+            // هنا يمكنك إضافة كود لإرسال البيانات إلى الخادم
+            console.log('بيانات الحجز:', formData);
+            alert('تم استلام حجزك بنجاح! سنتواصل معك قريباً.');
+            
+            // إعادة تعيين النموذج
+            this.reset();
+        });
+
+        // التنقل السلس
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
